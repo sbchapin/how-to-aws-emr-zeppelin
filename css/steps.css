@@ -1,0 +1,138 @@
+
+/* Start */
+#start {
+  font-size: 45px;
+}
+#start #zeppelin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url(../img/zeppelin-logo.png);
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 1000px;
+  margin-top: -300px;
+  margin-left: -600px;
+  z-index: -1;
+}
+#start sup {
+  vertical-align: super;
+  font-size: 0.5em;
+}
+#start .footnote {
+  margin-top: 50px;
+  font-style: italic;
+  font-size: 0.5em;
+}
+
+/* what we'll be making */
+#what-well-be-making-description {
+  font-size: 45px;
+}
+#what-well-be-making-diagram {
+  background-image: url(../img/zeppelin-aws-emr-diagram.png);
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  height: 700px;
+  width: 1000px;
+}
+
+/* Setup */
+#set-up-choice h1 {
+  text-align: center;
+}
+#set-up-choice .choice a .header {
+  position: absolute;
+  bottom: -10px;
+  width: 358px;
+  font-size: 28px;
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.2em;
+}
+#set-up-choice .choice a {
+  display: block;
+  width: 358px;
+  height: 300px;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  margin: 20px;
+}
+#set-up-choice .choice a:hover {
+  -moz-box-shadow: 3px 3px 20px #000;
+  -webkit-box-shadow: 3px 3px 20px #000;
+  box-shadow: 3px 3px 20px #000;
+}
+#set-up-choice .choice.web a {
+  background-image: url(../img/tutorial-web-preview.png);
+  float: left;
+}
+#set-up-choice .choice.shell a {
+  background-image: url(../img/tutorial-shell-preview.png);
+  float: right;
+}
+.set-up-web {
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 550px;
+  width: 800px;
+}
+.set-up-web.login {
+  background-image: url(../img/set-up-web-login.png);
+}
+.set-up-web.keypair-splash {
+  background-image: url(../img/set-up-web-keypair-splash.png);
+}
+.set-up-web.keypair-naming {
+  background-image: url(../img/set-up-web-keypair-naming.png);
+}
+.set-up-web.keypair-download {
+  background-image: url(../img/set-up-web-keypair-download.png);
+}
+.set-up-web.emr-splash {
+  background-image: url(../img/set-up-web-emr-splash.png);
+}
+.set-up-web.emr-conf-general {
+  background-image: url(../img/set-up-web-emr-conf-general.png);
+  height: 170px;
+}
+.set-up-web.emr-conf-software {
+  background-image: url(../img/set-up-web-emr-conf-software.png);
+  height: 250px;
+}
+.set-up-web.emr-conf-hardware {
+  background-image: url(../img/set-up-web-emr-conf-hardware.png);
+  height: 110px;
+}
+.set-up-web.emr-conf-access {
+  background-image: url(../img/set-up-web-emr-conf-access.png);
+  height: 225px;
+}
+.set-up-web.emr-startup-starting {
+  background-image: url(../img/set-up-web-emr-startup-starting.png);
+}
+.set-up-web.emr-startup-master-started {
+  background-image: url(../img/set-up-web-emr-startup-master-started.png);
+}
+.set-up-web.emr-startup-bootstrap {
+  background-image: url(../img/set-up-web-emr-startup-bootstrap.png);
+}
+.set-up-web.emr-startup-started {
+  background-image: url(../img/set-up-web-emr-startup-started.png);
+}
+
+
+/* Whodunnit */
+#whodunnit ul {
+  font-size: 42px;
+  list-style: circle;
+}
+#whodunnit .footnote {
+    font-size: 28px;
+    line-height: 10px;
+}
+
+/* Overview */
+#overview { display: none }
