@@ -16,7 +16,7 @@ This is designed to be both a **presentation**, **tool**, and **documentation**.
 
 ## Who
 
-Big shoutout to [HGData]() for hosting the hackathon this was presented at and the [UCSB Data Science Team](https://www.facebook.com/DataScienceUCSB) for innovating the zeppelin notebooks hosted in this repo.
+Big shoutout to [HGData]() for hosting the hackathon this was presented at and the [UCSB Data Science Team](https://www.facebook.com/DataScienceUCSB) for innovating the zeppelin notebooks enabled by this repo.
 
 ---
 
