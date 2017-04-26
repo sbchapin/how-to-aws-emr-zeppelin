@@ -25,66 +25,181 @@
 
 <div id="impress">
 
-    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q>Aren’t you just <b>bored</b> with all those slides-based presentations?</q>
-    </div>
+  <div id="start" class="step" data-x="0" data-y="-1000">
+    <div id="zeppelin"></div>
+    <p><a href="#set-up-choice">🔽 How to set up Zeppelin</a>, and<br > <a href="#use-zeppelin">⏬ How to use Zeppelin</a>, from scratch<sup class="superscript">†</sup>.</p>
+    <br />
+    <p class="float-right">But first, <a href="#what-well-be-making-description">▶️ an overview</a>.</p>
+    <br class="float-clear" />
+    <p class="footnote">†: <b>Scratch</b> assumes you've created an <a href="https://aws.amazon.com/free" class="external" target="_blank">AWS account</a> and have admin rights.</p>
+  </div>
 
-    <div class="step slide" data-x="0" data-y="-1500">
-        <q>Don’t you think that presentations given <strong>in modern browsers</strong> shouldn’t <strong>copy the limits</strong> of ‘classic’ slide decks?</q>
-    </div>
+  <div id="what-well-be-making-description" class="step" data-x="1000" data-y="-1000">
+    <h1>What we'll be making:</h1>
+    <p>
+      <a href="https://zeppelin.apache.org/"   class="external" target="_blank">Zeppelin</a> as a user interface for coding
+      <a href="http://spark.apache.org/"       class="external" target="_blank">Spark</a>, run on
+      <a href="https://aws.amazon.com/emr/"    class="external" target="_blank">AWS EMR</a> with multiple
+      <a href="https://aws.amazon.com/ec2/"    class="external" target="_blank">AWS EC2</a> machines as a cluster, accessing public data hosted on
+      <a href="https://aws.amazon.com/s3/"     class="external" target="_blank">AWS S3</a>.
+    </p>
+    <br />
+    <p>Or, for the more visually inclined...</p>
+  </div>
 
-    <div class="step slide" data-x="1000" data-y="-1500">
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
-    </div>
+  <div id="what-well-be-making-diagram" class="step" data-x="1000" data-y="-600" data-scale="0.4">
+  </div>
 
-    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
-        <span class="try">then you should try</span>
-        <h1>impress.js<sup>*</sup></h1>
-        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+  <div id="set-up-choice" class="step" data-x="0" data-y="1500">
+    <h1>How do you want to set up Zeppelin?</h1>
+    <div class="choice web">
+      <a href="#set-up-web-login">
+        <span class="header">AWS web interface</span>
+      </a>
     </div>
+    <div class="choice shell">
+      <a href="#set-up-shell-1">
+        <span class="header">AWS CLI</span>
+      </a>
+    </div>
+  </div>
 
-    <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p>It’s a <strong>presentation tool</strong> <br/>
-        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
-    </div>
+  <div id="set-up-web-login" class="step" data-x="1000" data-y="1000">
+    <p>
+      First things first, <br />
+      <a href="https://console.aws.amazon.com/" class="external" target="_blank">log into your account</a>.
+    </p>
+    <a href="https://console.aws.amazon.com/" class="external" target="_blank"><div class="set-up-web login"></div></a>
+  </div>
 
-    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-        <p>visualize your <b>big</b> <span class="thoughts">thoughts</span></p>
-    </div>
+  <div id="set-up-web-keypair-description" class="step" data-x="2000" data-y="1000">
+    <p>We're in. Let's first make a keypair so you can securely connect to the <a href="#what-well-be-making-diagram">otherwise hidden amazon cloud</a>.</p>
+    <br />
+    <br />
+  </div>
 
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
-    </div>
+  <div id="set-up-web-keypair-part-1" class="step" data-x="1700" data-y="1200" data-scale="0.25">
+    <ul>
+      <li>Go to the <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:sort=keyName" class="external" target="_blank">EC2 key-pair UI</a>.</li>
+      <li>Click "Create Key Pair."</li>
+    </ul>
+    <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#KeyPairs:sort=keyName" class="external" target="_blank"><div class="set-up-web keypair-splash"></div></a>
+  </div>
 
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
-    </div>
+  <div id="set-up-web-keypair-part-2" class="step" data-x="2000" data-y="1200" data-scale="0.25">
+    <ul>
+      <li>Enter a name.</li>
+      <li>Create it.<li>
+    </ul>
+    <div class="set-up-web keypair-naming"></div>
+  </div>
 
-    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
-    </div>
+  <div id="set-up-web-keypair-part-3" class="step" data-x="2300" data-y="1200" data-scale="0.25">
+    <ul>
+      <li>Download the pem file.</li>
+      <li>We'll use this <a href="#use-zeppelin">later</a>.</li></ul>
+    <div class="set-up-web keypair-download"></div>
+  </div>
 
-    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
-        <q><a href="http://github.com/bartaz/impress.js">use the source</a>, Luke!</q>
-    </div>
 
-    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
-        <p>one more thing...</p>
-    </div>
+  <div id="set-up-web-emr-description" class="step" data-x="3000" data-y="1000">
+    <p>
+      We're logged in, and we have a keypair to connect with. Now we need to actually create the cluster. <br />
+      (AKA <a href="#what-well-be-making-diagram">the orange stuff</a>.)
+    </p>
+    <br />
+    <br />
+  </div>
 
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it’s</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
-        <span class="footnote">* beat that, prezi ;)</span>
-    </div>
+  <div id="set-up-web-emr-part-1" class="step" data-x="2800" data-y="1200" data-scale="0.25">
+    <ul>
+      <li>Navigate to the <a href="https://us-west-2.console.aws.amazon.com/elasticmapreduce/home?region=us-west-2#" class="external" target="_blank">EMR UI</a>.</li>
+      <li>Click <a href="https://us-west-2.console.aws.amazon.com/elasticmapreduce/home?region=us-west-2#quick-create:#" class="external" target="_blank">"Create Cluster"</a>.</li>
+    </ul>
+    <a href="https://us-west-2.console.aws.amazon.com/elasticmapreduce/home?region=us-west-2#" class="external" target="_blank"><div class="set-up-web emr-splash"></div></a>
+  </div>
 
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-    </div>
+  <div id="set-up-web-emr-part-2" class="step" data-x="3150" data-y="1150" data-scale="0.25">
+    <p>Name the cluster.</p>
+    <div class="set-up-web emr-conf-general"></div>
+  </div>
+
+  <div id="set-up-web-emr-part-3" class="step" data-x="3150" data-y="1230" data-scale="0.25">
+    <p>Choose Spark + Zeppelin.</p>
+    <div class="set-up-web emr-conf-software"></div>
+  </div>
+
+  <div id="set-up-web-emr-part-4" class="step" data-x="3150" data-y="1310" data-scale="0.25">
+    <p>Keep the defaults for now.</p>
+    <div class="set-up-web emr-conf-hardware"></div>
+    <small><i>It is suggested to provide memory-optimized core instances for later revisions of your cluster.</i></small>
+  </div>
+
+  <div id="set-up-web-emr-part-5" class="step" data-x="3150" data-y="1390" data-scale="0.25">
+    <p>Use <a href="#set-up-web-keypair-description">the keypair</a> we previously created, then click "Create Cluster".</p>
+    <div class="set-up-web emr-conf-access"></div>
+  </div>
+
+  <div id="set-up-web-emr-startup" class="step" data-x="4000" data-y="1000">
+    <p><i>That's it.</i>  You've created the cluster.  Don't worry, it's natural to have to wait about 10 minutes for everything to provision.</p>
+    <br />
+    <p>Here's what you should see happen:</p>
+    <br />
+    <br />
+  </div>
+
+  <div id="set-up-web-emr-startup-part-1" class="step" data-x="3650" data-y="1250" data-scale="0.25">
+    <p>Scheduling EC2 instances in</p>
+    <div class="set-up-web emr-startup-starting"></div>
+  </div>
+
+  <div id="set-up-web-emr-startup-part-2" class="step" data-x="3900" data-y="1250" data-scale="0.25">
+    <p>Master node provisioned &amp; loading</p>
+    <div class="set-up-web emr-startup-master-started"></div>
+  </div>
+
+  <div id="set-up-web-emr-startup-part-3" class="step" data-x="4150" data-y="1250" data-scale="0.25">
+    <p>Core nodes provisioned &amp; loading</p>
+    <div class="set-up-web emr-startup-bootstrap"></div>
+  </div>
+
+  <div id="set-up-web-emr-startup-part-4" class="step" data-x="4400" data-y="1250" data-scale="0.25">
+    <p>All setup finished, waiting for you</p>
+    <div class="set-up-web emr-startup-started"></div>
+  </div>
+
+
+  <div id="set-up-web-emr-shutdown" class="step" data-x="5000" data-y="1000">
+    <h1>Word to the wise:</h1>
+    <p>Terminate your cluster when you're done. <b>You're spending money right now</b>.</p>
+  </div>
+
+
+  <div id="set-up-shell-1" class="step" data-x="1000" data-y="2000">
+    AWS CLI setup - TODO. <br />
+    <small>Please <a href="#whodunnit">get in contact</a> if you think you can fill this part in.</small>
+  </div>
+
+  <div id="use-zeppelin" class="step" data-x="0" data-y="4000">
+    Let's use Zeppelin
+  </div>
+
+  <div id="whodunnit" class="step" data-x="-5000" data-y="2000" data-scale="10">
+    <ul>
+      <li>Created by <a href="https://github.com/sbchapin" class="external" target="_blank">@sbchapin</a> (with much ❤️).</li>
+      <li>Built with <a href="https://github.com/impress/impress.js/" class="external" target="_blank">impress.js</a>.</li>
+      <li>Hosted on <a href="https://pages.github.com/" class="external" target="_blank">Github Pages</a>.</li>
+      <li>Versioned on <a href="https://github.com/sbchapin/how-to-aws-emr-zeppelin" class="external" target="_blank">Github</a>.</li>
+    </ul>
+    <span class="footnote">Get your name on here.  Present this to people that want to learn, or <a href="https://github.com/sbchapin/how-to-aws-emr-zeppelin" class="external" target="_blank">update these slides to make them better</a>.</span>
+  </div>
+
+  <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+  </div>
 
 </div>
 
-<!-- This is bad practice, but who cares.  At least we're supporting em. -->
+<!-- This is bad practice, but at least we're supporting em. -->
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>

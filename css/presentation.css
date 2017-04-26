@@ -95,21 +95,37 @@ body {
 }
 
 /*
+    Floats for convenience of positioning
+*/
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.float-clear {
+  clear: both;
+}
+/*
     Now let's bring some text styles back ...
 */
 b, strong { font-weight: bold }
 i, em { font-style: italic }
+h1 { font-size: 1.25em }
+h1, h2 { font-weight: bold }
+small { font-size: 0.33em }
 
 /*
     ... and give links a nice look.
 */
-a {
+a:not(.external) {
     color: inherit;
     text-decoration: none;
     padding: 0 0.1em;
     background: rgba(255,255,255,0.5);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
     border-radius: 0.2em;
+    border: 1px dashed black;
 
     -webkit-transition: 0.5s;
     -moz-transition:    0.5s;
@@ -118,10 +134,15 @@ a {
     transition:         0.5s;
 }
 
-a:hover,
-a:focus {
-    background: rgba(255,255,255,1);
+a:hover:not(.external),
+a:focus:not(.external) {
+    background: rgba(255,255,255,0.85);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+a.external {
+  border-color: blue;
+  text-decoration: underline;
 }
 
 /*
