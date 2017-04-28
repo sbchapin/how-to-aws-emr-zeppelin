@@ -72,8 +72,10 @@
     <a href="https://console.aws.amazon.com/" class="external" target="_blank"><div class="set-up-web login"></div></a>
   </div>
 
+
+
   <div id="set-up-web-keypair-description" class="step" data-x="2000" data-y="1000">
-    <p>We're in. Let's first make a keypair so you can securely connect to the <a href="#what-well-be-making-diagram">otherwise hidden amazon cloud</a>.</p>
+    <p>Once logged in, let's first make a keypair so you can securely connect (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html" class="external" target="_blank">via SSH</a>) to the <a href="#what-well-be-making-diagram">master instance</a> in case you want to debug.  <i>(keypairs are free)</i></p>
     <br />
     <br />
   </div>
@@ -96,22 +98,47 @@
 
   <div id="set-up-web-keypair-part-3" class="step" data-x="2300" data-y="1200" data-scale="0.25">
     <ul>
-      <li>Download the pem file.</li>
-      <li>We'll use this <a href="#use-zeppelin">later</a>.</li></ul>
+      <li>Download the pem file, back it up.</li>
+      <li>You can use this to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html" class="external" target="_blank">SSH onto the cluster</a>.</li>
+    </ul>
     <div class="set-up-web keypair-download"></div>
   </div>
 
 
-  <div id="set-up-web-emr-description" class="step" data-x="3000" data-y="1000">
+
+  <div id="set-up-web-security-group-description" class="step" data-x="3000" data-y="1000">
+    <p>Next, let's create a <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html" class="external" target="_blank">security group</a> with an opening for zeppelin so we can connect <a href="#what-well-be-making-diagram">via our browser</a>.  <i>(security groups are free)</i></p>
+    <br />
+    <br />
+  </div>
+
+  <div id="set-up-web-security-group-part-1" class="step" data-x="2850" data-y="1200" data-scale="0.25">
+    <ul>
+      <li>Go to the <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:sort=groupId" class="external" target="_blank">EC2 security group UI</a>.</li>
+      <li>Click "Create Security Group."</li>
+    </ul>
+    <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:sort=groupId" class="external" target="_blank"><div class="set-up-web security-group-splash"></div></a>
+  </div>
+
+  <div id="set-up-web-security-group-part-2" class="step" data-x="3150" data-y="1200" data-scale="0.25">
+    <p>After naming, create an inbound TCP rule for port 8890 (Zeppelin will use this). Then, create the security group.</p>
+    <div class="set-up-web security-group-setup"></div>
+  </div>
+
+
+
+
+  <div id="set-up-web-emr-description" class="step" data-x="4000" data-y="1000">
     <p>
-      We're logged in, and we have a keypair to connect with. Now we need to actually create the cluster. <br />
-      (AKA <a href="#what-well-be-making-diagram">the orange stuff</a>.)
+      We're logged in, we have a keypair to SSH with, and a security group that allows our browser.
+    </p>
+      Now we need to create <a href="#what-well-be-making-diagram">the orange stuff</a>.
     </p>
     <br />
     <br />
   </div>
 
-  <div id="set-up-web-emr-part-1" class="step" data-x="2800" data-y="1200" data-scale="0.25">
+  <div id="set-up-web-emr-part-1" class="step" data-x="3700" data-y="1200" data-scale="0.25">
     <ul>
       <li>Navigate to the <a href="https://us-west-2.console.aws.amazon.com/elasticmapreduce/home?region=us-west-2#" class="external" target="_blank">EMR UI</a>.</li>
       <li>Click <a href="https://us-west-2.console.aws.amazon.com/elasticmapreduce/home?region=us-west-2#quick-create:#" class="external" target="_blank">"Create Cluster"</a>.</li>
@@ -119,28 +146,58 @@
     <a href="https://us-west-2.console.aws.amazon.com/elasticmapreduce/home?region=us-west-2#" class="external" target="_blank"><div class="set-up-web emr-splash"></div></a>
   </div>
 
-  <div id="set-up-web-emr-part-2" class="step" data-x="3150" data-y="1150" data-scale="0.25">
-    <p>Name the cluster.</p>
-    <div class="set-up-web emr-conf-general"></div>
+  <div id="set-up-web-emr-part-2" class="step" data-x="3900" data-y="1150" data-scale="0.10">
+    <p>Break the gloves out, we're getting <i>advanced</i>.</p>
+    <div class="set-up-web emr-conf-advanced"></div>
   </div>
 
-  <div id="set-up-web-emr-part-3" class="step" data-x="3150" data-y="1230" data-scale="0.25">
-    <p>Choose Spark + Zeppelin.</p>
+  <div id="set-up-web-emr-part-3" class="step" data-x="3900" data-y="1195" data-scale="0.10">
+    <p>Choose Hadoop + Spark + Zeppelin.</p>
+    <small>(You can <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html" class="external" target="_blank">configure Zeppelin</a> later through that configuration field.)</small>
     <div class="set-up-web emr-conf-software"></div>
   </div>
 
-  <div id="set-up-web-emr-part-4" class="step" data-x="3150" data-y="1310" data-scale="0.25">
-    <p>Keep the defaults for now.</p>
-    <div class="set-up-web emr-conf-hardware"></div>
-    <small><i>It is suggested to provide memory-optimized core instances for later revisions of your cluster.</i></small>
+  <div id="set-up-web-emr-part-4" class="step" data-x="3900" data-y="1245" data-scale="0.10">
+    <p>Steps are irrelevant to Zeppelin.</p>
+    <p><i>Neeeext.</i></p>
+    <small>(If you submit a long running spark job, you'd do it as a step.)</small>
+    <div class="set-up-web emr-conf-steps"></div>
   </div>
 
-  <div id="set-up-web-emr-part-5" class="step" data-x="3150" data-y="1390" data-scale="0.25">
-    <p>Use <a href="#set-up-web-keypair-description">the keypair</a> we previously created, then click "Create Cluster".</p>
-    <div class="set-up-web emr-conf-access"></div>
+
+  <div id="set-up-web-emr-part-5" class="step" data-x="4050" data-y="1150" data-scale="0.10">
+    <p>What location and network to put the cluster in.</p>
+    <p>Defaults are fine.</p>
+    <div class="set-up-web emr-conf-deployment"></div>
   </div>
 
-  <div id="set-up-web-emr-startup" class="step" data-x="4000" data-y="1000">
+  <div id="set-up-web-emr-part-6" class="step" data-x="4050" data-y="1207" data-scale="0.10">
+    <p>Set up the machine types in the cluster. Defaults are fine, but higher memory is usually better. <i>Neeeext.</i></p>
+    <div class="set-up-web emr-conf-instances"></div>
+  </div>
+
+
+  <div id="set-up-web-emr-part-7" class="step" data-x="4200" data-y="1150" data-scale="0.10">
+    <p>Remove termination protection - keeping the cluster on means paying for it.</p>
+    <div class="set-up-web emr-conf-termination"></div>
+  </div>
+
+  <div id="set-up-web-emr-part-8" class="step" data-x="4200" data-y="1200" data-scale="0.10">
+    <p>Add tags of meaning to allow you to track &amp; manage your clusters. Not necessary. <i>Neeeext.</i></p>
+    <div class="set-up-web emr-conf-tags"></div>
+  </div>
+
+  <div id="set-up-web-emr-part-9" class="step" data-x="4350" data-y="1150" data-scale="0.10">
+    <p>Use <a href="#set-up-web-keypair-description">the keypair</a> we previously created. If you forget this, you won't be able to SSH.</p>
+    <div class="set-up-web emr-conf-keypair"></div>
+  </div>
+  <div id="set-up-web-emr-part-10" class="step" data-x="4350" data-y="1206" data-scale="0.10">
+    <p>Add to master additional <a href="#set-up-web-security-group-description">the security group</a> we previously created, then click "Create Cluster".</p>
+    <div class="set-up-web emr-conf-security-groups"></div>
+  </div>
+
+
+  <div id="set-up-web-emr-startup" class="step" data-x="5000" data-y="1000">
     <p><i>That's it.</i>  You've created the cluster.  Don't worry, it's natural to have to wait about 10 minutes for everything to provision.</p>
     <br />
     <p>Here's what you should see happen:</p>
@@ -148,31 +205,33 @@
     <br />
   </div>
 
-  <div id="set-up-web-emr-startup-part-1" class="step" data-x="3650" data-y="1250" data-scale="0.25">
+  <div id="set-up-web-emr-startup-part-1" class="step" data-x="4650" data-y="1250" data-scale="0.25">
     <p>Scheduling EC2 instances in</p>
     <div class="set-up-web emr-startup-starting"></div>
   </div>
 
-  <div id="set-up-web-emr-startup-part-2" class="step" data-x="3900" data-y="1250" data-scale="0.25">
-    <p>Master node provisioned &amp; loading</p>
+  <div id="set-up-web-emr-startup-part-2" class="step" data-x="4900" data-y="1250" data-scale="0.25">
+    <p>Master instance provisioned &amp; loading</p>
     <div class="set-up-web emr-startup-master-started"></div>
   </div>
 
-  <div id="set-up-web-emr-startup-part-3" class="step" data-x="4150" data-y="1250" data-scale="0.25">
+  <div id="set-up-web-emr-startup-part-3" class="step" data-x="5150" data-y="1250" data-scale="0.25">
     <p>Core nodes provisioned &amp; loading</p>
     <div class="set-up-web emr-startup-bootstrap"></div>
   </div>
 
-  <div id="set-up-web-emr-startup-part-4" class="step" data-x="4400" data-y="1250" data-scale="0.25">
+  <div id="set-up-web-emr-startup-part-4" class="step" data-x="5400" data-y="1250" data-scale="0.25">
     <p>All setup finished, waiting for you</p>
     <div class="set-up-web emr-startup-started"></div>
   </div>
 
 
-  <div id="set-up-web-emr-shutdown" class="step" data-x="5000" data-y="1000">
+
+  <div id="set-up-web-emr-shutdown" class="step" data-x="6000" data-y="1000">
     <h1>Word to the wise:</h1>
     <p>Terminate your cluster when you're done. <b>You're spending money right now</b>.</p>
   </div>
+
 
 
   <div id="set-up-shell-1" class="step" data-x="1000" data-y="2000">

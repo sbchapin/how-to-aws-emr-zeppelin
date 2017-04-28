@@ -82,6 +82,7 @@
 .set-up-web.login {
   background-image: url(../img/set-up-web-login.png);
 }
+
 .set-up-web.keypair-splash {
   background-image: url(../img/set-up-web-keypair-splash.png);
 }
@@ -91,38 +92,71 @@
 .set-up-web.keypair-download {
   background-image: url(../img/set-up-web-keypair-download.png);
 }
+
+.set-up-web.security-group-splash {
+  background-image: url(../img/set-up-web-security-group-splash.png);
+}
+.set-up-web.security-group-setup {
+  background-image: url(../img/set-up-web-security-group-setup.png);
+}
+
+
 .set-up-web.emr-splash {
   background-image: url(../img/set-up-web-emr-splash.png);
 }
-.set-up-web.emr-conf-general {
-  background-image: url(../img/set-up-web-emr-conf-general.png);
-  height: 170px;
+.set-up-web.emr-conf-advanced {
+  background-image: url(../img/set-up-web-emr-conf-advanced.png);
+  height: 100px;
 }
 .set-up-web.emr-conf-software {
   background-image: url(../img/set-up-web-emr-conf-software.png);
-  height: 250px;
+  height: 350px;
 }
-.set-up-web.emr-conf-hardware {
-  background-image: url(../img/set-up-web-emr-conf-hardware.png);
-  height: 110px;
+.set-up-web.emr-conf-steps {
+  background-image: url(../img/set-up-web-emr-conf-steps.png);
+  height: 180px;
 }
-.set-up-web.emr-conf-access {
-  background-image: url(../img/set-up-web-emr-conf-access.png);
-  height: 225px;
+
+.set-up-web.emr-conf-termination {
+  background-image: url(../img/set-up-web-emr-conf-termination.png);
+  height: 300px;
 }
-.set-up-web.emr-startup-starting {
-  background-image: url(../img/set-up-web-emr-startup-starting.png);
+.set-up-web.emr-conf-tags {
+  background-image: url(../img/set-up-web-emr-conf-tags.png);
+  height: 330px;
 }
-.set-up-web.emr-startup-master-started {
-  background-image: url(../img/set-up-web-emr-startup-master-started.png);
+
+.set-up-web.emr-conf-deployment {
+  background-image: url(../img/set-up-web-emr-conf-deployment.png);
+  height: 280px;
+}
+.set-up-web.emr-conf-instances {
+  background-image: url(../img/set-up-web-emr-conf-instances.png);
+  height: 400px;
+}
+
+.set-up-web.emr-conf-keypair {
+  background-image: url(../img/set-up-web-emr-conf-keypair.png);
+  height: 330px;
+}
+.set-up-web.emr-conf-security-groups {
+  background-image: url(../img/set-up-web-emr-conf-security-groups.png);
+  height: 400px;
+}
+
+
+.set-up-web.emr-startup-started {
+  background-image: url(../img/set-up-web-emr-startup-started.png);
 }
 .set-up-web.emr-startup-bootstrap {
   background-image: url(../img/set-up-web-emr-startup-bootstrap.png);
 }
-.set-up-web.emr-startup-started {
-  background-image: url(../img/set-up-web-emr-startup-started.png);
+.set-up-web.emr-startup-master-started {
+  background-image: url(../img/set-up-web-emr-startup-master-started.png);
 }
-
+.set-up-web.emr-startup-starting {
+  background-image: url(../img/set-up-web-emr-startup-starting.png);
+}
 
 /* Whodunnit */
 #whodunnit ul {
