@@ -114,6 +114,7 @@ i, em { font-style: italic }
 h1 { font-size: 1.25em }
 h1, h2 { font-weight: bold }
 small { font-size: 0.33em }
+.smaller { font-size: 0.5em }
 
 /*
     ... and give links a nice look.
@@ -144,6 +145,7 @@ a.external {
   border-color: blue;
   text-decoration: underline;
 }
+.smaller a { text-shadow: -1px -1px 1px rgba(100,100,100,0.6); }
 
 /*
     Because the main point behind the impress.js demo is to demo impress.js

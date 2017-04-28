@@ -27,6 +27,8 @@
 
   <div id="start" class="step" data-x="0" data-y="-1000">
     <div id="zeppelin"></div>
+    <p class="navigation">Arrow Keys + Space Bar to navigate</p>
+    <br />
     <p><a href="#set-up-choice">🔽 How to set up Zeppelin</a>, and<br > <a href="#use-zeppelin">⏬ How to use Zeppelin</a>, from scratch<sup class="superscript">†</sup>.</p>
     <br />
     <p class="float-right">But first, <a href="#what-well-be-making-description">▶️ an overview</a>.</p>
@@ -240,7 +242,39 @@
   </div>
 
   <div id="use-zeppelin" class="step" data-x="0" data-y="4000">
-    Let's use Zeppelin
+    <p>If you have a running cluster, <a href="#use-waiting-state">Let's use it ⏩</a></p>
+    <p>If you've set up, but it's off, <a href="#use-clone">Lets clone one ▶️</a></p>
+    <p>Otherwise, <a href="#set-up-choice">Set up a Zeppelin cluster 🔼</a></p>
+  </div>
+
+  <div id="use-clone" class="step" data-x="1000" data-y="4000">
+    <p>Cloning a cluster copies its configuration to a new cluster. Clone a known good configuration.</p>
+    <div class="use clone"></div>
+  </div>
+
+  <div id="use-waiting-state" class="step" data-x="2000" data-y="4000">
+    <p>Make sure you have a cluster in the <span class="waiting-state">Waiting</span> state. It'll take about 10 minutes to get there from startup.</p>
+    <div class="use emr-startup-started"></div>
+  </div>
+
+  <div id="use-address" class="step" data-x="3000" data-y="4000">
+    <p>Copy the "Master public DNS". Paste it into your browser bar, and add <span class="preformat">:8890</span></p>
+    <p class="smaller">This is the port we <a href="#set-up-web-security-group-description">opened on the security group</a> that we <a href="#set-up-web-emr-part-10">added to the cluster</a>.</p>
+    <p class="smaller">Should look like <span class="preformat">ec2-54-69-18-73.us-west-2.compute.amazonaws.com:8890</span>.</p>
+    <div class="use address"></div>
+  </div>
+
+  <div id="use-zeppelin-splash" class="step" data-x="4000" data-y="4000">
+    <p>That's cooking with hydrogen.</p>
+    <p>Import a notebook from any of <a href="https://github.com/sbchapin/how-to-aws-emr-zeppelin/tree/master/notebooks" class="external" target="_blank">these example notebooks</a>.</p>
+    <i>or</i>
+    <p>Check out zeppelin's default notebook.</p>
+    <div class="use zeppelin-splash"></div>
+  </div>
+
+  <div id="use-zeppelin-default-notebook" class="step" data-x="5000" data-y="4000">
+
+    <div class="use zeppelin-default-notebook"></div>
   </div>
 
   <div id="whodunnit" class="step" data-x="-5000" data-y="2000" data-scale="10">

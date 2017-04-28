@@ -3,6 +3,9 @@
 #start {
   font-size: 45px;
 }
+#start .navigation {
+  color: grey;
+}
 #start #zeppelin {
   position: absolute;
   top: 50%;
@@ -72,7 +75,27 @@
   background-image: url(../img/tutorial-shell-preview.png);
   float: right;
 }
-.set-up-web {
+
+#use-zeppelin {
+  font-size: 32px;
+}
+
+#use-waiting-state .waiting-state{
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+}
+#use-address .preformat {
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.2em;
+  border: 1px solid #CD4546;
+  color: #CD4546;
+  padding: 0px 10px;
+}
+#use-zeppelin-splash {
+  font-size: 30px;
+}
+.set-up-web,
+.use {
   background-size: 100%, 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -145,7 +168,8 @@
 }
 
 
-.set-up-web.emr-startup-started {
+.set-up-web.emr-startup-started,
+.use.emr-startup-started {
   background-image: url(../img/set-up-web-emr-startup-started.png);
 }
 .set-up-web.emr-startup-bootstrap {
@@ -156,6 +180,19 @@
 }
 .set-up-web.emr-startup-starting {
   background-image: url(../img/set-up-web-emr-startup-starting.png);
+}
+
+.use.clone {
+  background-image: url(../img/use-clone.png);
+}
+.use.address {
+  background-image: url(../img/use-address.png);
+}
+.use.zeppelin-splash {
+  background-image: url(../img/use-zeppelin-splash.png);
+}
+.use.zeppelin-default-notebook {
+  background-image: url(../img/use-zeppelin-default-notebook.png);
 }
 
 /* Whodunnit */
